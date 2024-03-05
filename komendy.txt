@@ -1,0 +1,67 @@
+aws ec2 run-instances --image-id ami-XXXX --instance-type t2.micro --key-name XXXX --security-group-ids sg-XXXXX --subnet-id subnet-XXXXXX
+
+$ mv Downloads/nowy_klucz.pem ~/.ssh
+$ ls ~/.ssh
+$ chmod 600 ~/.ssh/nowy_klucz.pem
+$ ssh -i ~/.ssh/nowy_klucz.pem ubuntu@3.121.109.85
+$ sudo apt update
+sudo apt install apache2 -y
+sudo apt install php php-mysql -y
+sudo systemctl restart apach2.service
+sudo apt install mysql-server -y
+sudo systemctl start mysql.service
+sudo systemctl status mysql.service
+
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+exit
+mysql -u root -p
+
+CREATE USER 'nazwa_uzytkownika'@'%' IDENTIFIED BY 'haslo';
+GRANT ALL PRIVILEGES ON nazwa_bazy_danych.* TO 'nazwa_uzytkownika'@'%';
+CREATE DATABASE nazwa_bazy_danych;
+USE nazwa_bazy_danych;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100)
+);
+
+INSERT INTO users (first_name, last_name, email) VALUES ('John', 'Doe', 'john@example.com');
+INSERT INTO users (first_name, last_name, email) VALUES ('Jane', 'Doe', 'jane@example.com');
+INSERT INTO users (first_name, last_name, email) VALUES ('Alice', 'Smith', 'alice@example.com');
+
+INSERT INTO users (first_name, last_name, email) VALUES ('Jan', 'Doe', 'jan@example.com');
+INSERT INTO users (first_name, last_name, email) VALUES ('Janina', 'Doe', 'janina@example.com');
+INSERT INTO users (first_name, last_name, email) VALUES ('Alicja', 'Smith', 'alicja@example.com');
+
+sudo apt install php php-mysql -y
+
+sudo vim /var/www/html/phpinfo.php
+/var/www/html/phpinfo.php
+<?php
+phpinfo();
+?>
+http://3.76.221.123/phpinfo.php
+
+
+{"Version": "2008-10-17",
+"Statement": [{"Sid": "AllowPublicRead",
+"Effect": "Allow",
+"Principal": {
+"AWS": "*"
+},
+"Action": "s3:GetObject",
+"Resource": "arn:aws:s3:::YOUR-BUCKET-NAME/*"
+}]}
+
+mysql -u admin -h moja-baza-rds.cpefxksozv3r.eu-central-1.rds.amazonaws.com -p
+mysql -u nazwa_uzytkownika -h moja-baza-rds.cpefxksozv3r.eu-central-1.rds.amazonaws.com -p
+
+mysqldump -h moja-baza-rds.cpefxksozv3r.eu-central-1.rds.amazonaws.com -u nazwa_uzytkownika -phaslo --all-databases > dump.sql
+
+mysqldump -h database-1.cluster-cpefxksozv3r.eu-central-1.rds.amazonaws.com -u nazwa_uzytkownika -phaslo --all-databases < dump.sq
+
+Wyciąg komend z historii nie działa przy wyłączeniu!
