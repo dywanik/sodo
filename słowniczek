@@ -1,0 +1,12 @@
+azetka - Availability Zone
+templatka - Launch Template
+maszynka, maszyna, VM, wiemka, fałka - instancja wirtualnej maszyny EC2
+zastopować - wyłączyć EC2 opcją “Stop”
+serwis - service, usługa
+(np. usługa) fejluje - usługa nie działa poprawnie, ma status “Failed” / “Unhealthy” / etc.
+aceelka - (Network) Access Control Lists
+cert - certyfikat ssl ale równie certyfikat np. AWS
+daszbord - dashboard, panel, miejsce gdzie wyświetlają się informacje
+user/juzer - użytkownik
+kredki - zestaw użytkownik + hasło - credentials
+pięćsetki - błędy z przedziału 500-599 (najczęściej 503)
