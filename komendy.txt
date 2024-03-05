@@ -7,7 +7,7 @@ $ ssh -i ~/.ssh/nowy_klucz.pem ubuntu@3.121.109.85
 $ sudo apt update
 sudo apt install apache2 -y
 sudo apt install php php-mysql -y
-sudo systemctl restart apach2.service
+sudo systemctl restart apach2e.service
 sudo apt install mysql-server -y
 sudo systemctl start mysql.service
 sudo systemctl status mysql.service
@@ -36,6 +36,7 @@ INSERT INTO users (first_name, last_name, email) VALUES ('Alice', 'Smith', 'alic
 INSERT INTO users (first_name, last_name, email) VALUES ('Jan', 'Doe', 'jan@example.com');
 INSERT INTO users (first_name, last_name, email) VALUES ('Janina', 'Doe', 'janina@example.com');
 INSERT INTO users (first_name, last_name, email) VALUES ('Alicja', 'Smith', 'alicja@example.com');
+Exit
 
 sudo apt install php php-mysql -y
 
