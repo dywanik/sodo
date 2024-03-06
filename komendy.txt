@@ -33,6 +33,8 @@ INSERT INTO users (first_name, last_name, email) VALUES ('John', 'Doe', 'john@ex
 INSERT INTO users (first_name, last_name, email) VALUES ('Jane', 'Doe', 'jane@example.com');
 INSERT INTO users (first_name, last_name, email) VALUES ('Alice', 'Smith', 'alice@example.com');
 
+---------------
+
 INSERT INTO users (first_name, last_name, email) VALUES ('Jan', 'Doe', 'jan@example.com');
 INSERT INTO users (first_name, last_name, email) VALUES ('Janina', 'Doe', 'janina@example.com');
 INSERT INTO users (first_name, last_name, email) VALUES ('Alicja', 'Smith', 'alicja@example.com');
@@ -66,3 +68,16 @@ mysqldump -h moja-baza-rds.cpefxksozv3r.eu-central-1.rds.amazonaws.com -u nazwa_
 mysqldump -h database-1.cluster-cpefxksozv3r.eu-central-1.rds.amazonaws.com -u nazwa_uzytkownika -phaslo --all-databases < dump.sq
 
 Wyciąg komend z historii nie działa przy wyłączeniu!
+
+
+1. Logujemy się jako root do lokalnej bazy:
+$ sudo mysql
+2. Na bazie nadajemy hasło użytkownikowi root oraz opuszczamy bazę:
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'haslo';
+mysql> exit
+3. Weryfikujemy, że hasło działa (wpisujemy hasło nadane w powyższym punkcie:
+	$ mysql -u root -p
+Jeśli wszystko poszło poprawnie, znajdziemy się w MySQL:
+	mysql>_
+4. Utworzymy teraz nowego użytkownika oraz odpowiednie schematy dla bazy danych. Przeklejamy kolejno poniższe komendy:
+
